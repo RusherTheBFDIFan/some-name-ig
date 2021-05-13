@@ -1,0 +1,79 @@
+<html>
+    <head>
+        <title></title>
+    </head>
+    <body>
+        <center>
+        <h1>
+            Guest List
+        </h1>
+        <div>
+            <input type="text" placeholder="Add guest here" id="guesteneterer"> 
+            <button onclick="submit()">
+                Submit
+            </button>
+        </div>
+        <div>
+            <h1>
+                Guest List
+            </h1>
+            <button onclick="show()">
+                Show List
+            </button>
+            <div id="e">
+            </div>
+        </div>
+        <br>
+        <div>
+            <button onclick="sort()">
+                Sort List
+            </button>
+        </div>
+        <br>
+        <div>
+            <input type="text" placeholder="Find a person's name here" id="searchbar">
+            <button onclick="search()">Search</button>
+            <div id="p2">
+            </div>
+        </div>
+    </center>
+        <script>
+            var guestlist = []
+            console.log(guestlist)
+
+            function submit(){
+                var GuestName = document.getElementById("guestenterer").value;
+                console.log(GuestName)
+                guestlist.push(GuestName);
+                console.log(guestlist);
+            }
+
+            function show(){
+                var g;
+                for(g=0;g<=guestlist.length;g++){
+                    document.getElementById("guestlist"[g]).innerHTML = "e"
+                }
+            }
+
+            function sort(){
+                guestlist.sort();
+                console.log(guestlist);
+            }
+
+
+            function search(){
+                var s = document.getElementById("searchbar").value;
+                var found = 0;
+                var j;
+                for(j=0; j<guestlist.length; j++)
+                {
+                    if(s==guestlist[j]){
+                        found=found+1;
+                    }
+                }
+                document.getElementById("p2").innerHTML = "name found " + found + "time(s)";
+                console.log("name found " + found + "time(s)")
+            }
+        </script>
+    </body>
+</html>
